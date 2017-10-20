@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
-app.get('/navbar', function(req, reset){
+app.get('/navbar', function(req, res){
 	res.render('navbar');
 	
 });
