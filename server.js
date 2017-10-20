@@ -18,6 +18,11 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
+app.get('/navbar', function(req, reset){
+	res.render('navbar');
+	
+});
+
 app.listen(port, function() {
 	console.log('Our app is running on http://localhost:' + port);
 });
