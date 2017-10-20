@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -74,6 +75,39 @@
     </tbody>
   </table>
 </div>
-	</container>
+<div style="margin-top:100px;">
+
+<div ng-app = "mainApp" ng-controller = "studentController">
+         Enter first name: <input type = "text" ng-model = "student.firstName"><br><br>
+         Enter last name: <input type = "text" ng-model = "student.lastName"><br>
+         <br>
+         
+         You are entering: {{student.fullName()}}
+      </div>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+var mainApp = angular.module("mainApp", []);
+         
+         mainApp.controller('studentController', function($scope) {
+            $scope.student = {
+               firstName: "",
+               lastName: "",
+               
+               fullName: function() {
+                  var studentObject;
+                  studentObject = $scope.student;
+                  return studentObject.firstName + " " + studentObject.lastName;
+               }
+            };
+         });
+
+</script>
 </body>
 </html>
